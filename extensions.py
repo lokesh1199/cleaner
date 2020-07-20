@@ -21,13 +21,16 @@ videoExt = ['3g2', '3gp', 'avi', 'flv',
 documentExt = ['doc', 'odt', 'pdf','rtf',
 				'tef, txt', 'wpd', 'docx']
 
+appsExt = ['apk', 'xapk',]
 
+torrentsext = ['.torrent']
 
 
 combined = dict(
 				Audio=audioExt, Video=videoExt,
 				Document=documentExt, Image=imageExt,
-				Archive=archiveExt, Discs=discExt
+				Archive=archiveExt, Discs=discExt,
+				Apps=appsExt, Torrents=torrentsext,
 				)
 
 
