@@ -23,7 +23,7 @@ documentExt = ['doc', 'odt', 'pdf','rtf',
 
 appsExt = ['apk', 'xapk',]
 
-torrentsext = ['.torrent']
+torrentsExt = ['torrent']
 
 encExt = ['gpg']
 
