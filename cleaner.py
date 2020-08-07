@@ -32,9 +32,9 @@ def checkExt(file):
 	This checks if given file has extension
 	is in the extensions.py
 	'''
-	ext = file.suffix[1:]		# Removes the '.' 
+	ext = findExt(file)
 
-	for category in combined:	
+	for category in combined:
 		if ext in combined[category]:
 			return category
 
@@ -68,8 +68,17 @@ def cleaner(downPath):
 		else:
 			print(file, 'is not in the extensions')
 
+
+def findExt(file):
+	'''
+	Finds the extension in a file name
+	'''
+	file = list(str(file))
+	try:
+		pos = list(reversed(file)).index('.')
+		return ''.join(file[-pos:])
+	except ValueError:
+		return None
+
 if __name__ == '__main__':
 	cleaner(setup())
-
-
-
