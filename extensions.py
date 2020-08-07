@@ -31,6 +31,6 @@ combined = dict(
 				Audio=audioExt, Video=videoExt,
 				Document=documentExt, Image=imageExt,
 				Archive=archiveExt, Discs=discExt,
-				Apps=appsExt, Torrents=torrentsext,
+				Apps=appsExt, Torrents=torrentsExt,
 				Encrypted=encExt,
 				)
