@@ -1,7 +1,12 @@
-This script automatically sorts your downlods folder
+# Cleaner
 
-### USAGE
-To run the script type
-```bash
+## Description
+
+This script automatically sorts your downlods folder and place the files
+into appropriate folders.
+
+## Usage
+
+```
 python cleaner.py
 ```
