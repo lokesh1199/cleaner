@@ -1,36 +1,97 @@
-audioExt = ['aif', 'cda', 'midi', 'mid',
-			'mp3', 'mpa', 'ogg', 'wav',
-			 'wma', 'wpl' ]
+audio = 'Audio'
+video = 'Video'
+document = 'Documents'
+image = 'Images'
+archive = 'Archive'
+disc = 'Disc Images'
+app = 'Apps'
+torrent = 'Torrents'
+script = 'Scripts'
 
-archiveExt = ['7z', 'arj', 'deb', 'pkg',
-			'rar', 'rpm', 'tar.gz', 'z',
-			'zip']
+extensions = {
+    # audio
+    'aif': audio,
+    'cda': audio,
+    'midi': audio,
+    'mid': audio,
+    'mp3': audio,
+    'mpa': audio,
+    'ogg': audio,
+    'wav': audio,
+    'wma': audio,
+    'wpl': audio,
+    'opus': audio,
 
-discExt = ['bin', 'dmg', 'iso', 'toast',
-			'vcd']
+    # video
+    '3g2': video,
+    '3gp': video,
+    'avi': video,
+    'flv': video,
+    'h264': video,
+    'm4v': video,
+    'mkv': video,
+    'mov': video,
+    'mp4': video,
+    'mpeg': video,
+    'mpg': video,
+    'rm': video,
+    'swf': video,
+    'vob': video,
+    'wmv': video,
 
-imageExt = ['ai' 'bmp', 'gif', 'ico',
-			'jpeg', 'jpg', 'png', 'ps',
- 			'psd', 'svg', 'tif', 'tiff']
+    # document
+    'doc': document,
+    'docx': document,
+    'odt': document,
+    'pdf': document,
+    'rtf': document,
+    'tef': document,
+    'txt': document,
+    'wpd': document,
 
-videoExt = ['3g2', '3gp', 'avi', 'flv',
-			'h264', 'm4v', 'mkv', 'mov',
-			'mp4', 'mpg', 'mpeg', 'rm',
-			'swf', 'vob', 'wmv']
+    # image
+    'aibmp': image,
+    'gif': image,
+    'ico': image,
+    'jpeg': image,
+    'jpg': image,
+    'png': image,
+    'ps': image,
+    'psd': image,
+    'svg': image,
+    'tif': image,
+    'tiff': image,
 
-documentExt = ['doc', 'odt', 'pdf','rtf',
-				'tef', 'txt', 'wpd', 'docx']
+    # archive
+    '7z': archive,
+    'arj': archive,
+    'deb': archive,
+    'pkg': archive,
+    'rar': archive,
+    'rpm': archive,
+    'tar': archive,
+    'xyz': archive,
+    'gz': archive,
+    'z': archive,
+    'zip': archive,
 
-appsExt = ['apk', 'xapk',]
+    # disc images
+    'bin': disc,
+    'dmg': disc,
+    'iso': disc,
+    'toast': disc,
+    'vcd': disc,
 
-torrentsExt = ['torrent']
+    # apps
+    'apk': app,
+    'xapk': app,
 
-encExt = ['gpg']
+    # torrents
+    'torrent': torrent,
 
-combined = dict(
-				Audio=audioExt, Video=videoExt,
-				Document=documentExt, Image=imageExt,
-				Archive=archiveExt, Discs=discExt,
-				Apps=appsExt, Torrents=torrentsExt,
-				Encrypted=encExt,
-				)
+    # scripts
+    'sh': script,
+    'bash': script,
+    'bat': script,
+    'py': script,
+}

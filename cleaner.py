@@ -2,7 +2,7 @@ import os
 import shutil
 from pathlib import Path
 
-from extensions import combined
+from extensions import extensions
 
 
 def createDir(dirName):
@@ -36,10 +36,8 @@ def checkExt(file):
     is in the extensions.py
     '''
 
-    for category in combined:
-        for extension in combined[category]:
-            if str(file).endswith(extension):
-                return category
+    extension = str(file).split('.')[-1]
+    return extensions.get(extension, None)
 
 
 def setup():
