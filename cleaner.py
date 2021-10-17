@@ -1,6 +1,5 @@
-import os
 import shutil
-from pathlib import Path
+from pathlib import Path, os
 
 from extensions import extensions
 
@@ -9,34 +8,32 @@ def createDir(dirName):
     os.mkdir(dirName)
 
 
-def finder(downPath):
+def getFiles(downPath):
     '''
     This find the files in the current working
     directory
     '''
-    cwd = downPath
-    files = []
-    for i in os.listdir(cwd):
-        i = cwd / i
-        if not i.is_dir():
-            files.append(i)
-    return files
+
+    for file in os.listdir(downPath):
+        file = downPath / file
+        if not file.is_dir():
+            yield str(file)
 
 
-def mover(home, dest):
+def moveFile(home, dest):
     if not dest.exists():		# If folder doesn't exists
         createDir(dest)			# Creates the folder
 
-    shutil.move(str(home), str(dest))  # moves the file to the folder
+    shutil.move(home, dest)  # moves the file to the folder
 
 
-def checkExt(file):
+def checkExtension(file):
     '''
     This checks if given file has extension
-    is in the extensions.py
+    is in the defined extensions
     '''
 
-    extension = str(file).split('.')[-1]
+    extension = file.split('.')[-1]
     return extensions.get(extension, None)
 
 
@@ -48,7 +45,8 @@ def setup():
     '''
 
     if not (Path.cwd() / 'cleaner.config').is_file():
-        downPath = input('Enter Path for cleaning\n(Eg: /home/user/Downloads)')
+        downPath = input(
+            'Enter Path for cleaning\n(Eg: /home/user/Downloads): ')
         if not (Path.cwd() / downPath).is_dir():
             print('Invalid Path')
             exit()
@@ -61,12 +59,10 @@ def setup():
 
 
 def cleaner(downPath):
-    files = finder(downPath)
-
-    for file in files:
-        ext = checkExt(file)
+    for file in getFiles(downPath):
+        ext = checkExtension(file)
         if ext:					# if not None
-            mover(file, downPath / ext)
+            moveFile(file, downPath / ext)
         else:
             print(file, 'is not in the extensions')
 
